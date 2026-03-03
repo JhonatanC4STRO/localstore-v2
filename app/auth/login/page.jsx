@@ -1,0 +1,45 @@
+"use client";
+import React from "react";
+import Link from "next/link";
+import { BackgroundGradientAnimation } from "@/app/components/ui/background-gradient-animation";
+export default function LoginPage() {
+    return (
+        <div className="grid h-screen grid-cols-[1fr_40%]">
+            <div className="">
+                <BackgroundGradientAnimation />
+            </div>
+            <div className=" flex flex-col justify-center px-20" >
+                <h1 className="text-gray-900 font-bold text-2xl text-center mb-3">Sign in to your account</h1>
+
+                <button className="flex items-center justify-center gap-2 border border-gray-300 py-2 px-4 mb-3 rounded-full hover:bg-gray-100" href="#">
+                    <img src="/google.png" alt="Google logo" className="w-5 h-5" />
+                    Continue with Google
+                </button>
+
+                <form action="" className="border-b border-t pt-3 border-gray-300 pb-3 flex flex-col justify-center">
+                    <div className="flex flex-col mb-2 ">
+                        <label className="" htmlFor="">Email addres</label>
+                        <input className="border focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 border-gray-300 py-2 px-4 rounded-lg" type="email" name="email" />
+                    </div>
+                    <div className="flex flex-col mb-2">
+                        <label className="" htmlFor="">Password</label>
+                        <input className="border focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 border-gray-300 py-2 px-4 rounded-lg" type="password" name="password" />
+                    </div>
+                    <div className="flex flex-col mb-2">
+                        <label className="" htmlFor="">Confirm Password</label>
+                        <input className="border focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 border-gray-300 py-2 px-4 rounded-lg" type="password" name="password" />
+                    </div>
+                    <Link className="text-end text-blue-500 hover:underline" href="#">Forgot your password?</Link>
+                    <div className="flex mb-2 gap-3">
+                        <input className="focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 cursor-pointer" type="checkbox" name="" id="" />
+                        <label htmlFor="">Remember me</label>
+                    </div>
+                    <button className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 hover:cursor-pointer">Log in</button>
+                </form>
+                <p className="text-center mt-3 text-lg">Don&apos;t have an account?</p>
+                <Link className="text-center mt-3 border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-200" href="/auth/register">Register</Link>
+            </div>
+        </div>
+
+    );
+}
